@@ -1,0 +1,45 @@
+#!/bin/bash
+ 
+if [ $1 != -c ]
+then
+  #read name from command line arguments
+  name=$2
+ 
+  #read filename from commandline arguments
+  file=$1
+  set `ls -li $file`
+  echo $4
+
+  if [ $4 = $name ]
+  then 
+    echo "Cheating : 0"
+  else
+    echo "Cheating : 1"
+  fi
+else
+   
+    name1=$3
+    file1=$2
+    name2=$5
+    file2=$4
+     set `ls -li $file1`
+     file1username=$4
+
+    
+     set `ls -li $file2`
+      file2username=$4
+
+     if [ $file1username = $name1 -a $file2username = $name2 ]
+     then 
+      diff $file1 $file2
+     else
+        echo "either file's owner is different or file2's"
+  fi
+
+
+fi
+
+
+
+
+

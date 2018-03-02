@@ -1,0 +1,35 @@
+#!/bin/bash
+read -p "enter first number: " num1 
+read -p "enter second number: " num2
+v=`expr $num1 + 2`
+if [ $? -eq 0 ]
+then
+    echo "number verified"
+else./
+    echo  "you didn't eneter a valid number"
+fi
+n=`expr $num2 + 2`
+if [ $? -eq 0 ]
+then
+    echo "number verified"
+else
+    echo  "you didn't eneter a valid number"
+fi
+sum=`expr $num1 + $num2`
+echo "sum of numbers is": "$sum"
+subtract=`expr $num1 - $num2`
+echo "substraction of numbers is": "$subtract"
+mul=`expr $num1 \* $num2`
+echo "multiplication of numbers is": "$mul"
+if [ $num2 -eq 0 ]
+then 
+    echo"division not possible"
+else
+    div=`expr $num1 / $num2`
+echo "division of numbers is": "$div"
+fi
+
+
+
+
+

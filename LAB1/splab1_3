@@ -1,0 +1,17 @@
+#!/bin/bash
+UNIX=("Debian" "Redhat" "Ubantu" "Susa" "Fedora")
+echo "elements in UNIX: "${UNIX[@]}
+echo"length of array: "${#UNIX[*]}
+echo "length of element at index 2: "${#UNIX[2]}
+echo "extraction: " ${UNIX[@] :3 : 2}
+echo "Search and replace element: " ${UNIX[@]/"Ubantu"/"SEO"}
+echo "adding new elements: " ${UNIX[@]} "AIX" "HP-UX"
+unset UNIX[3]
+echo "removing 3rd elements: " ${UNIX[@]}
+LINUX=(${UNIX[@]})
+echo "new array: " ${LINUX[@]}
+BASH=(${UNIX[@]} ${LINUX[@]})
+echo "concatenated array: "${BASH[@]}
+unset LINUX
+unset UNIX
+

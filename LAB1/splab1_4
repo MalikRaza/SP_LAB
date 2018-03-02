@@ -1,0 +1,3 @@
+#!/bin/bash
+array=(`cat names`)
+echo ${#array[*]}

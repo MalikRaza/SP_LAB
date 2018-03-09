@@ -1,0 +1,7 @@
+#!/bin/bash
+set `pidof $1`
+cd /proc/$1
+cat status
+
+
+

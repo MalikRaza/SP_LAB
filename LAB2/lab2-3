@@ -1,0 +1,23 @@
+#!/bin/bash
+name=$1
+if [ $# -eq 0 ]
+then
+	echo "no argument"
+elif [ $# -gt 1 ]
+ then
+        echo "arguments not appropriate"
+else   
+   for i in `ls `
+  do
+    set `ls -li $i`
+  if [ $4 = $name ]
+  then
+     if [ -f $i ]
+     then
+     echo $i "| regular |"  $name 
+     else
+     echo $i "| non_regular |"  $name    
+fi   
+    fi   
+done
+fi

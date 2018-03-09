@@ -1,0 +1,99 @@
+#!/bin/bash
+declare -i numberofarg
+  declare -i ten
+PrintTable()
+{
+if [ $numberofarg -eq 1 ]
+then 
+	ten=11
+        declare -i start=0
+        declare -i num=$1
+	while [ $start -lt $ten ] 
+	do 
+		echo "$num x "$start"=" ` expr $num \* $start `
+
+                start="$start +1"
+         done
+elif [ $numberofarg -eq 3 ] 
+then 
+ if [ $2 = -s ]
+  then
+	ten=11
+        declare -i start=$3
+        declare -i num=$1
+	while [ $start -lt $ten ] 
+	do 
+		echo "$num x "$start"=" ` expr $num \* $start `
+
+                start="$start +1"
+        done
+  elif [ $2 = -e ]
+  then
+	ten=`expr $3+1`
+        declare -i start=1
+        declare -i num=$1
+	while [ $start -lt $ten ] 
+	do 
+		echo "$num x "$start"=" ` expr $num \* $start `
+
+                start="$start +1"
+        done
+   fi
+elif [ $numberofarg -eq 5 ]
+then
+   if [ $2 = "-s" -a $4 = "-e" ]
+   then
+	ten=`expr $5+1`
+        declare -i start=$3
+        declare -i num=$1
+	while [ $start -lt $ten ] 
+	do 
+		echo "$num x "$start"=" ` expr $num \* $start `
+
+                start="$start +1"
+        done
+   fi
+elif [ $numberofarg -eq 6 ]
+then
+   if [ $2 = "-s" -a $4 = "-e" -a $6 = "-r" ]
+   then
+	ten=`expr $3-1`
+        declare -i start=$5
+        declare -i num=$1
+	while [ $start -gt $ten ] 
+	do 
+		echo "$num x "$start"=" ` expr $num \* $start `
+
+                start="$start -1"
+        done
+   fi
+
+fi
+
+}
+
+numberofarg=$#
+echo $numberofarg
+if [ $numberofarg -eq 0 ]
+then
+	echo "no arguments entered"
+elif [ $numberofarg -gt 6 ]
+  then 
+	   echo " argument entered is greater than 6"
+  
+elif [ $numberofarg -eq 1 ]
+then 
+	   PrintTable $1
+elif [ $numberofarg -eq 3 ]
+then 
+	   PrintTable $1 $2 $3   
+elif [ $numberofarg -eq 5 ]
+then 
+	   PrintTable $1 $2 $3 $4 $5 
+elif [ $numberofarg -eq 6 ]
+then 
+	   PrintTable $1 $2 $3 $4 $5 $6
+
+fi                                                                     
+
+

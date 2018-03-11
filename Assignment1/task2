@@ -1,0 +1,17 @@
+#!/bin/bash
+input=$1
+declare -i num
+num=1
+while IFS= read -r var
+do
+echo "$num"
+div=`expr $num % 2`
+if [ $div -eq 0 ]
+then 
+     echo $var 1 >> evenfile 
+else
+    echo $var 1 >> oddfile 
+fi
+  num=`expr $num+1`
+  
+done < "$input"

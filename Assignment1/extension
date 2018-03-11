@@ -1,0 +1,12 @@
+#!/bin/bash
+for i in `ls`
+do 
+file=$i
+mkdir ${file##*\.} 2>del.txt
+
+
+done
+for i in `ls`
+do
+mv $i ${i##*\.} 2>del.txt
+done

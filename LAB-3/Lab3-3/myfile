@@ -1,0 +1,8 @@
+myexe: main.o mySTRFunc.o myMathFunc.o
+	gcc -o myexe main.o mySTRFunc.o myMathFunc.o
+myMathFunc.o: myMathFunc.c
+	gcc -c myMathFunc.c
+mySTRFunc.o: mySTRFunc.c
+	gcc -c mySTRFunc.c
+main.o: main.c
+	gcc -c main.c
